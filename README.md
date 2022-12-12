@@ -12,7 +12,7 @@ Inspired by [sleepopolis' sleep calculator](https://sleepopolis.com/calculators/
 1. Clone the repo
 
 ```bash
-git clone https://MichalUSER/sleepcalc.git
+git clone https://github.com/MichalUSER/sleepcalc.git
 ```
 
 2. Install the dependencies
