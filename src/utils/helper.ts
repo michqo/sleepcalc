@@ -10,7 +10,7 @@ const getFallAsleep = (hour: string, minute: string): Time[] => {
 
   for (let i = 6; i >= 3; i--) {
     let minutes = date.getMinutes().toString();
-    if (minutes == "0") {
+    if (minutes.length == 1) {
       minutes = minutes + "0";
     }
     times.push({
