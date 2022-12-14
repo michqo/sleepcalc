@@ -33,3 +33,8 @@
     {/if}
   </div>
 </div>
+
+<p class="italic mt-4">
+  Please keep in mind that the average human takes fourteen minutes to fall
+  asleep.
+</p>
