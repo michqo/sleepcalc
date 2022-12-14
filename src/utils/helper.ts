@@ -1,6 +1,6 @@
 import type { Time } from "./types";
 
-// Generates times when to fall asleep
+// TODO: Fix
 const getFallAsleep = (hour: string, minute: string): Time[] => {
   const times: Time[] = [];
   const date = new Date();
@@ -11,7 +11,7 @@ const getFallAsleep = (hour: string, minute: string): Time[] => {
   for (let i = 6; i >= 3; i--) {
     let minutes = date.getMinutes().toString();
     if (minutes.length == 1) {
-      minutes = minutes + "0";
+      minutes = "0" + minutes;
     }
     times.push({
       time: `${date.getHours()}:${minutes}`,
