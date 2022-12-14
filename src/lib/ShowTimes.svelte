@@ -19,7 +19,7 @@
 
 <div
   class="px-3 py-4 w-full flex-center flex-col bg-gray-700 drop-shadow-xl rounded-lg"
-  in:fade
+  in:fade={{ duration: 120 }}
 >
   <div>
     {#if $type == "fallAsleep"}

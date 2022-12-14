@@ -1,6 +1,5 @@
 import type { Time } from "./types";
 
-// TODO: Fix
 const getFallAsleep = (hour: string, minute: string): Time[] => {
   const times: Time[] = [];
   const date = new Date();
