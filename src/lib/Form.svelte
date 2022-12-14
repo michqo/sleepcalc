@@ -1,20 +1,33 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
   import { getFallAsleep, getWakeUp } from "../utils/helper";
-  import { generate, type, fallAsleep, wakeUp } from "../utils/stores";
+  import {
+    generate,
+    type,
+    hour,
+    minute,
+    fallAsleep,
+    wakeUp,
+  } from "../utils/stores";
   import ShowTimes from "./ShowTimes.svelte";
-
-  let hour: string;
-  let minute: string;
 
   const selectClass =
     "text-2xl font-bold rounded border-2 border-purple-600 px-3 py-2 w-1/2 bg-transparent hover:border-purple-400 focus:outline-none appearance-none";
   const buttonClass =
     "text-lg px-3 py-2 rounded-md text-black border border-black focus:ring";
 
+  function getMinute(i: number): string {
+    const minute = (i * 5).toString();
+    if (minute.length == 1) {
+      return `0${minute}`;
+    } else {
+      return minute;
+    }
+  }
+
   function handleClick1() {
     $type = "fallAsleep";
-    $fallAsleep = getFallAsleep(hour, minute);
+    $fallAsleep = getFallAsleep($hour, $minute);
     $generate = true;
   }
   function handleClick2() {
@@ -27,25 +40,18 @@
 {#if !$generate}
   <div class="flex-center flex-col w-full mt-16" in:fade>
     <h2 class="text-2xl">Wake up at</h2>
-    <div class="flex-center flex-col md:flex-row gap-x-1 w-full mt-2">
-      <div class="flex-center w-full gap-x-1">
-        <select class={selectClass} bind:value={hour}>
-          {#each Array(24) as _, i}
-            <option value={i}>
-              {i}
-            </option>
-          {/each}
-        </select>
-        <p class="text-2xl">:</p>
-        <select class={selectClass} bind:value={minute}>
-          {#each Array(12) as _, i}
-            <option value={i * 5}>
-              {i * 5}
-            </option>
-          {/each}
-        </select>
-      </div>
-      <p class="text-xl">am</p>
+    <div class="flex-center gap-x-1 w-full mt-2">
+      <select class={selectClass} bind:value={$hour}>
+        {#each Array(24) as _, i}
+          <option>{i}</option>
+        {/each}
+      </select>
+      <p class="text-2xl">:</p>
+      <select class={selectClass} bind:value={$minute}>
+        {#each Array(12) as _, i}
+          <option>{getMinute(i)}</option>
+        {/each}
+      </select>
     </div>
   </div>
 {:else}

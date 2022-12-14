@@ -3,7 +3,9 @@ import type { Time } from "./types";
 
 const generate = writable(false);
 const type: Writable<"fallAsleep" | "wakeUp"> = writable();
+const hour: Writable<string> = writable();
+const minute: Writable<string> = writable();
 const fallAsleep: Writable<Time[]> = writable();
 const wakeUp: Writable<Time[]> = writable();
 
-export { generate, type, fallAsleep, wakeUp };
+export { generate, type, hour, minute, fallAsleep, wakeUp };

@@ -1,13 +1,16 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import { type, fallAsleep, wakeUp } from "../utils/stores";
+  import { type, hour, minute, fallAsleep, wakeUp } from "../utils/stores";
   import TimeText from "./TimeText.svelte";
 
   const textClass = "mt-12 mb-4 text-lg";
 </script>
 
 {#if $type == "fallAsleep"}
-  <p class={textClass}>Try to fall asleep at one of the following times:</p>
+  <p class={textClass}>
+    To wake up at <span class="font-bold">{$hour}:{$minute}</span> try to fall asleep
+    at one of the following times:
+  </p>
 {:else}
   <p class={textClass}>
     If you go to bed right now, try to wake up at one of the following times:
