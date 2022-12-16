@@ -13,6 +13,7 @@
 
   const selectClass =
     "text-2xl font-bold rounded border-2 border-purple-600 px-3 py-2 w-1/2 bg-transparent hover:border-purple-400 focus:outline-none appearance-none";
+  const optionClass = "bg-gray-800";
   const buttonClass =
     "text-lg px-3 py-2 rounded-md text-black border border-black focus:ring";
 
@@ -43,13 +44,13 @@
     <div class="flex-center gap-x-1 w-full mt-2">
       <select class={selectClass} bind:value={$hour}>
         {#each Array(24) as _, i}
-          <option>{i}</option>
+          <option class={optionClass}>{i}</option>
         {/each}
       </select>
       <p class="text-2xl">:</p>
       <select class={selectClass} bind:value={$minute}>
         {#each Array(12) as _, i}
-          <option>{getMinute(i)}</option>
+          <option class={optionClass}>{getMinute(i)}</option>
         {/each}
       </select>
     </div>

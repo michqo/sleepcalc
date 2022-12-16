@@ -24,5 +24,6 @@
 <style>
   :global(body) {
     @apply bg-gray-900 text-slate-100;
+    color-scheme: dark;
   }
 </style>
