@@ -3,8 +3,8 @@
   import Footer from "./lib/Footer.svelte";
 </script>
 
-<div class="flex-center flex-col min-h-screen my-16 mx-4">
-  <main class="flex-center flex-col w-full max-w-sm md:max-w-md">
+<article class="flex-center flex-col min-h-full my-16 mx-4">
+  <main class="flex-center flex-col max-w-sm md:max-w-md">
     <h1 class="text-3xl md:text-4xl leading-10 text-center">
       <a
         href="https://github.com/MichalUSER/sleepcalc"
@@ -19,7 +19,7 @@
   <div class="flex-1" />
   <!-- Todo: Make footer visible without scrolling -->
   <Footer />
-</div>
+</article>
 
 <style>
   :global(body) {

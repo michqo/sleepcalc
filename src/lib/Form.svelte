@@ -39,7 +39,7 @@
 </script>
 
 {#if !$generate}
-  <div class="flex-center flex-col w-full mt-16" in:fade={{ duration: 120 }}>
+  <div class="flex items-center flex-col w-full mt-16" in:fade={{ duration: 120 }}>
     <h2 class="text-2xl">Wake up at</h2>
     <div class="flex-center gap-x-1 w-full mt-2">
       <select class={selectClass} bind:value={$hour}>
