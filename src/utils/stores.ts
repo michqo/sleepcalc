@@ -7,5 +7,6 @@ const hour: Writable<string> = writable();
 const minute: Writable<string> = writable();
 const fallAsleep: Writable<Time[]> = writable();
 const wakeUp: Writable<Time[]> = writable();
+const christmas: Writable<boolean> = writable(false);
 
-export { generate, type, hour, minute, fallAsleep, wakeUp };
+export { generate, type, hour, minute, fallAsleep, wakeUp, christmas };
