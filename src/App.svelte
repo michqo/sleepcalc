@@ -1,6 +1,6 @@
 <script lang="ts">
-  import {onMount} from "svelte";
-  import {christmas} from "./utils/stores"
+  import { onMount } from "svelte";
+  import { christmas } from "./utils/stores";
   import Form from "./lib/Form.svelte";
   import Footer from "./lib/Footer.svelte";
   import Background from "./lib/Background.svelte";
@@ -27,7 +27,9 @@
         class="underline decoration-4">Sleep Cycle Calculator</a
       >
     </h1>
-    <p class="mt-1 text-slate-400 {$christmas ? 'text-slate-200' : ''}">Optimize my sleep cycle</p>
+    <p class="mt-1 text-slate-400 {$christmas ? 'text-slate-200' : ''}">
+      Optimize my sleep cycle
+    </p>
     <img src="/sleep.png" alt="Sleep" class="mt-8" width="150" height="103" />
     <Form />
   </main>

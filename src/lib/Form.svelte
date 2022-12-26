@@ -8,7 +8,7 @@
     minute,
     fallAsleep,
     wakeUp,
-    christmas
+    christmas,
   } from "../utils/stores";
   import ShowTimes from "./ShowTimes.svelte";
 
@@ -41,16 +41,25 @@
 </script>
 
 {#if !$generate}
-  <div class="flex items-center flex-col w-full mt-16" in:fade={{ duration: 120 }}>
+  <div
+    class="flex items-center flex-col w-full mt-16"
+    in:fade={{ duration: 120 }}
+  >
     <h2 class="text-2xl">Wake up at</h2>
     <div class="flex-center gap-x-1 w-full mt-2">
-      <select class="{selectClass} {$christmas ? `${christmasSelectClass}` : ''}" bind:value={$hour}>
+      <select
+        class="{selectClass} {$christmas ? `${christmasSelectClass}` : ''}"
+        bind:value={$hour}
+      >
         {#each Array(24) as _, i}
           <option class={optionClass}>{i}</option>
         {/each}
       </select>
       <p class="text-2xl">:</p>
-      <select class="{selectClass} {$christmas ? `${christmasSelectClass}` : ''}" bind:value={$minute}>
+      <select
+        class="{selectClass} {$christmas ? `${christmasSelectClass}` : ''}"
+        bind:value={$minute}
+      >
         {#each Array(12) as _, i}
           <option class={optionClass}>{getMinute(i)}</option>
         {/each}

@@ -1,6 +1,13 @@
 <script lang="ts">
   import { fade } from "svelte/transition";
-  import { type, hour, minute, fallAsleep, wakeUp, christmas } from "../utils/stores";
+  import {
+    type,
+    hour,
+    minute,
+    fallAsleep,
+    wakeUp,
+    christmas,
+  } from "../utils/stores";
   import TimeText from "./TimeText.svelte";
 
   const textClass = "mt-12 mb-4 text-lg";
@@ -19,7 +26,9 @@
 {/if}
 
 <div
-  class="px-3 py-4 w-full flex-center flex-col drop-shadow-xl rounded-lg {$christmas ? `${christmasClass}` : 'bg-gray-700'}"
+  class="px-3 py-4 w-full flex-center flex-col drop-shadow-xl rounded-lg {$christmas
+    ? `${christmasClass}`
+    : 'bg-gray-700'}"
   in:fade={{ duration: 120 }}
 >
   <div>
