@@ -14,10 +14,10 @@
 
   let selectClass =
     "text-2xl font-bold rounded border-2 border-purple-600 px-3 py-2 w-1/2 bg-transparent hover:border-purple-400 focus:outline-none appearance-none";
-  const christmasSelectClass = "border-purple-400 hover:border-purple-300";
+  const christmasSelectClass = "border-purple-300 hover:border-purple-200";
   const optionClass = "bg-gray-800";
   const buttonClass =
-    "text-lg px-3 py-2 rounded-md text-black border border-black focus:ring";
+    "text-lg px-3 py-2 rounded-md text-slate-100 bg-white/[.08] border border-accent focus:ring";
 
   function getMinute(i: number): string {
     const minute = (i * 5).toString();
@@ -71,18 +71,11 @@
 {/if}
 
 <div class="flex justify-center flex-wrap gap-3 my-16">
-  <button
-    class="{buttonClass} bg-indigo-600 focus:bg-indigo-800"
-    on:click={handleClick1}>Calculate</button
-  >
-  <button
-    class="{buttonClass} bg-emerald-600 focus:bg-emerald-800"
-    on:click={handleClick2}>Sleep now</button
-  >
+  <button class={buttonClass} on:click={handleClick1}>Calculate</button>
+  <button class={buttonClass} on:click={handleClick2}>Sleep now</button>
   {#if $generate}
-    <button
-      class="{buttonClass} bg-indigo-600 focus:bg-indigo-800"
-      on:click={() => ($generate = false)}>Check again</button
+    <button class={buttonClass} on:click={() => ($generate = false)}
+      >Check again</button
     >
   {/if}
 </div>
