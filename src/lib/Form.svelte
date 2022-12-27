@@ -12,21 +12,18 @@
   } from "../utils/stores";
   import ShowTimes from "./ShowTimes.svelte";
 
+  const hourArray = [
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+    21, 22, 23, 24,
+  ];
+  const minuteArray = ["00", "05", 10, 15, 20, 25, 30, 35, 40, 45, 50, 55];
+
   let selectClass =
     "text-2xl font-bold rounded border-2 border-purple-600 px-3 py-2 w-1/2 bg-transparent hover:border-purple-400 focus:outline-none appearance-none";
   const christmasSelectClass = "border-purple-300 hover:border-purple-200";
   const optionClass = "bg-gray-800";
   const buttonClass =
     "text-lg px-3 py-2 rounded-md text-slate-100 bg-white/[.08] border border-accent focus:ring";
-
-  function getMinute(i: number): string {
-    const minute = (i * 5).toString();
-    if (minute.length == 1) {
-      return `0${minute}`;
-    } else {
-      return minute;
-    }
-  }
 
   function handleClick1() {
     $type = "fallAsleep";
@@ -51,7 +48,7 @@
         class="{selectClass} {$christmas ? `${christmasSelectClass}` : ''}"
         bind:value={$hour}
       >
-        {#each Array(24) as _, i}
+        {#each hourArray as i}
           <option class={optionClass}>{i}</option>
         {/each}
       </select>
@@ -60,8 +57,8 @@
         class="{selectClass} {$christmas ? `${christmasSelectClass}` : ''}"
         bind:value={$minute}
       >
-        {#each Array(12) as _, i}
-          <option class={optionClass}>{getMinute(i)}</option>
+        {#each minuteArray as i}
+          <option class={optionClass}>{i}</option>
         {/each}
       </select>
     </div>
