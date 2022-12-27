@@ -21,7 +21,7 @@ git clone https://github.com/MichalUSER/sleepcalc.git
 npm install
 ```
 
-then start dev server
+3. Start dev server
 
 ```bash
 npm run dev
