@@ -44,7 +44,14 @@
   </div>
 </div>
 
-<p class="italic mt-4">
-  Please keep in mind that the average human takes fourteen minutes to fall
-  asleep.
-</p>
+{#if $type == "fallAsleep"}
+  <p class="italic mt-4">
+    Please keep in mind that the average human takes fourteen minutes to fall
+    asleep.
+  </p>
+{:else}
+  <p class="italic mt-4">
+    Please keep in mind that the times are calculated on the assumption that it
+    takes fourteen minutes to fall asleep.
+  </p>
+{/if}

@@ -27,6 +27,7 @@ const getWakeUp = (): Time[] => {
   const times: Time[] = [];
   const date = new Date();
   date.setHours(date.getHours());
+  date.setMinutes(date.getMinutes() + 14);
 
   for (let i = 1; i <= 6; i++) {
     date.setMinutes(date.getMinutes() + 90);
